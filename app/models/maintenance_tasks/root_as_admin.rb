@@ -6,8 +6,8 @@
 #  https://github.com/puzzle/cryptopus.
 
 class MaintenanceTasks::RootAsAdmin < MaintenanceTask
-  self.label = 'Set root as admin'
-  self.description = 'Sets the root as an admin and the root role will be removed.'
+  self.label = I18n.t('admin.maintenance_tasks.root_as_admin.label')
+  self.description = I18n.t('admin.maintenance_tasks.root_as_admin.description')
   self.task_params = [{ label: :root_password, type: PARAM_TYPE_PASSWORD }]
 
   def execute

@@ -75,6 +75,12 @@ de:
         title: "Wartungsaufgaben"
         maintenance_task: "Wartungsaufgabe"
         run: "Ausführen"
+      new_root_password:
+        label: "Neues Root Passwort"
+        description: "Setzt ein neues Root Passwort."
+      root_as_admin:
+        label: "Root als Admin setzen"
+        description: "Setze den Root als Admin und die Rolle Root wird gelöscht."
     settings:
       index:
         title: "Einstellungen bearbeiten"

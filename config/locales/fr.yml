@@ -77,6 +77,12 @@ fr:
         title: "Les tâches de maintenance"
         maintenance_task: "Tâche de maintenance"
         run: "effectuer"
+      new_root_password:
+        label: "Nouveau mot de passe de root"
+        description: "Définit un nouveau mot de passe de root"
+      root_as_admin:
+        label: "Définit root comme admin"
+        description: "Définit root comme admin et le rôle root sera supprimé."
     settings:
       index:
         title: "Modifier les paramètres"

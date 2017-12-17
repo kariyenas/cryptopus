@@ -6,8 +6,8 @@
 #  https://github.com/puzzle/cryptopus.
 
 class MaintenanceTasks::NewRootPassword < MaintenanceTask
-  self.label = 'New root password'
-  self.description = 'Sets a new root password.'
+  self.label = I18n.t('admin.maintenance_tasks.new_root_password.label')
+  self.description = I18n.t('admin.maintenance_tasks.new_root_password.description')
   self.hint = 'WARNING! If you reset the root-password, all private
                teams can no longer be accessed by root.'
   self.task_params = [{ label: :new_root_password, type: PARAM_TYPE_PASSWORD },

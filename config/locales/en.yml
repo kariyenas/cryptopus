@@ -75,6 +75,12 @@ en:
         title: "Maintenance tasks"
         maintenance_task: "Maintenance tasks"
         run: "execute"
+      new_root_password:
+        label: "New root password"
+        description: "Sets a new root password."
+      root_as_admin:
+        label: "Set root as admin"
+        description: "Sets the root as and admin and the root role will be removed."
     settings:
       index:
         title: "Edit Settings"
