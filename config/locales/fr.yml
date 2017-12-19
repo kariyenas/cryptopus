@@ -37,6 +37,10 @@ fr:
   group: "Groupe"
   team: "Équipe"
   move: "Mouvoir"
+  executed_at: "Exécuté à"
+  status: "Statut"
+  output: "Sortie"
+  executer: "Executer"
 
   i18n:
     language:
@@ -77,6 +81,7 @@ fr:
         title: "Les tâches de maintenance"
         maintenance_task: "Tâche de maintenance"
         run: "effectuer"
+        logs: "Journaux"
       new_root_password:
         label: "Nouveau mot de passe de root"
         description: "Définit un nouveau mot de passe de root"

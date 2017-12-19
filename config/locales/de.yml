@@ -35,6 +35,10 @@ de:
   group: "Gruppe"
   team: "Team"
   move: "Bewegen"
+  executed_at: "Ausgeführt am"
+  status: "Status"
+  output: "Ausgabe"
+  executer: "Ausführender"
 
   i18n:
     language:
@@ -75,6 +79,7 @@ de:
         title: "Wartungsaufgaben"
         maintenance_task: "Wartungsaufgabe"
         run: "Ausführen"
+        logs: "Protokolle"
       new_root_password:
         label: "Neues Root Passwort"
         description: "Setzt ein neues Root Passwort."

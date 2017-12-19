@@ -75,6 +75,7 @@ en:
         title: "Maintenance tasks"
         maintenance_task: "Maintenance tasks"
         run: "execute"
+        logs: "Logs"
       new_root_password:
         label: "New root password"
         description: "Sets a new root password."
