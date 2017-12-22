@@ -92,6 +92,9 @@ fr:
       index:
         title: "Modifier les paramètres"
         save: "Sauvegarder les modifications"
+      countries:
+        title: Whitelist de pays
+        description: Si rien n'est sélectionné, seuls les fichiers privés et IPs sont autorisés sur la Whitelist.
     recryptrequests:
       index:
         title: "Demandes de re crypt"

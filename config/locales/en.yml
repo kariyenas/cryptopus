@@ -86,6 +86,9 @@ en:
       index:
         title: "Edit Settings"
         save: "Save changes"
+      countries:
+        title: Whitelisted countries
+        description: If nothing is selected, only private and whitelisted ips are authorized.
     recryptrequests:
       index:
         title: "Re-encryption requests"

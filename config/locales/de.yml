@@ -90,6 +90,9 @@ de:
       index:
         title: "Einstellungen bearbeiten"
         save: "Änderungen speichern"
+      countries:
+        title: Länder Whitelist
+        description: Wenn nichts ausgewählt ist, sind nur private und IPs auf der Whitelist zugelassen.
     recryptrequests:
       index:
         title: "Entschlüsselungs Anfragen"
