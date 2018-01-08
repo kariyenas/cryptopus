@@ -20,17 +20,7 @@
   .result-password.select-click
     %input#cleartext_password.password-hidden.form-control{readonly: "readonly", type: "text", value: "#{@account.cleartext_password}"}/
     %br/
-    - strength = PasswordStrength.test(@account.cleartext_username, @account.cleartext_password)
-    - if strength.status == :weak || strength.status == :invalid
-      -# =image_tag 'weak.png'
-      =image_tag 'weak.png', id: 'password_strength'
-      %strong= t 'password_strength.weak'
-    - elsif strength.status == :good
-      =image_tag 'good.png', id: 'password_strength'
-      %strong= t 'password_strength.good'
-    - elsif strength.status == :strong
-      =image_tag 'strong.png', id: 'password_strength'
-      %strong= t 'password_strength.strong'
+    = render 'layouts/password_strength', username: @account.cleartext_username, password: @account.cleartext_password
     %button.btn.clip_button{"data-clipboard-target" => "#cleartext_password", title: "copy password (ctrl + c)", id: "copy_password_button"}
       %svg.icon-clippy
         %use{"xlink:href" => "#icon-clippy"}

@@ -13,4 +13,5 @@
     .form-group
       = label_tag t('.reset_password')
       = password_field_tag :new_password, nil, class: 'form-control'
+      -# = render 'layouts/password_strength', username: @user.username, password: new_password.value
     = submit_tag t('.reset_password'), class: 'btn btn-primary', data: { confirm: t('admin.users.edit.warning') }
