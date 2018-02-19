@@ -28,6 +28,15 @@ class GroupTest < ActiveSupport::TestCase
 
     	assert group.valid?
     end
+    
+    test 'does not create group if name is too long' do
+      params = {}
+      params[:name] = 'g' * 71
+      group = Group.new(params)
+
+      assert_not group.valid?
+      assert_match /Name/, group.errors.full_messages.first
+    end
 
     test 'does not create group if name is empty' do
       params = {}

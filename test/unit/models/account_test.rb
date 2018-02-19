@@ -72,6 +72,19 @@ class AccountTest <  ActiveSupport::TestCase
     assert_equal 'foo', account.cleartext_password
   end
 
+  test 'does not create account if name is too long' do
+    params = {}
+    params[:accountname] = 'g' * 71
+    params[:username] = 'foo'
+    params[:password] = 'foo'
+    params[:description] = 'foo foo'
+
+    account = Account.new(params)
+
+    assert_not account.valid?
+    assert_match /Accountname/, account.errors.full_messages.first
+  end
+
   test 'does not create account if name is empty' do
     params = {}
     params[:accountname] = ''

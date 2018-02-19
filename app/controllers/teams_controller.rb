@@ -32,12 +32,7 @@ class TeamsController < ApplicationController
     respond_to do |format|
       team = Team.create(current_user, team_params)
       authorize team
-      if team.valid?
-        flash[:notice] = t('flashes.teams.created')
-        format.html { redirect_to(teams_url) }
-      else
-        format.html { render action: 'new' }
-      end
+      team.valid? ? created_team(format) : team_not_valid(format)
     end
   end
 
@@ -78,5 +73,15 @@ class TeamsController < ApplicationController
 
   def team
     @team ||= Team.find(params[:id])
+  end
+
+  def created_team(format)
+    flash[:notice] = t('flashes.teams.created')
+    format.html { redirect_to(teams_url) }
+  end
+
+  def team_not_valid(format)
+    flash[:error] = t('flashes.teams.not_valid')
+    format.html { redirect_to(new_team_path) }
   end
 end

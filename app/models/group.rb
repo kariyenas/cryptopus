@@ -26,7 +26,6 @@ class Group < ApplicationRecord
   validates :name, length: { maximum: 70 }
   validates :description, length: { maximum: 300 }
 
-
   def label
     name
   end

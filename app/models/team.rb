@@ -5,7 +5,7 @@
 # Table name: teams
 #
 #  id          :integer          not null, primary key
-#  name        :string(40)       default(""), not null
+#  name        :string(70)       default(""), not null
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -24,7 +24,7 @@ class Team < ApplicationRecord
   has_many :members, through: :teammembers, source: :user
 
   validates :name, presence: true
-  validates :name, length: { maximum: 40 }
+  validates :name, length: { maximum: 70 }
   validates :description, length: { maximum: 300 }
 
   class << self

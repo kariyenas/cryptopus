@@ -50,10 +50,9 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        flash[:notice] = t('flashes.groups.created')
-        format.html { redirect_to team_groups_url(team) }
+        created_group(format)
       else
-        format.html { render action: 'new' }
+        group_not_valid(format)
       end
     end
   end
@@ -111,6 +110,16 @@ class GroupsController < ApplicationController
       add_breadcrumb team.label, :team_groups_path
       add_breadcrumb @group.label
     end
+  end
+
+  def created_group(format)
+    flash[:notice] = t('flashes.groups.created')
+    format.html { redirect_to team_groups_url(team) }
+  end
+
+  def group_not_valid(format)
+    flash[:error] = t('flashes.groups.not_valid')
+    format.html { redirect_to(new_team_group_path) }
   end
 
 end

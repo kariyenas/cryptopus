@@ -5,6 +5,7 @@
 
 class AccountsController < ApplicationController
   before_action :group
+  before_action :redirect_if_account_not_exists, only: :show
   helper_method :team
 
   # GET /teams/1/groups/1/accounts
@@ -23,7 +24,6 @@ class AccountsController < ApplicationController
 
   # GET /teams/1/groups/1/accounts/1
   def show
-    @account = Account.find(params[:id])
     authorize @account
     @items = @account.items.load
 
@@ -139,6 +139,9 @@ class AccountsController < ApplicationController
 
   def group
     @group ||= team.groups.find(params[:group_id])
+  rescue
+    flash[:error] = t('flashes.groups.not_exist')
+    redirect_to teams_path
   end
 
   def accounts_breadcrumbs
@@ -162,7 +165,15 @@ class AccountsController < ApplicationController
       flash[:notice] = t('flashes.accounts.created')
       format.html { redirect_to team_group_accounts_url(team, @group) }
     else
-      format.html { render action: 'new' }
+      flash[:error] = t('flashes.accounts.not_valid')
+      format.html { redirect_to(new_team_group_account_path) }
     end
+  end
+
+  def redirect_if_account_not_exists
+    @account = Account.find(params[:id])
+  rescue
+    flash[:error] = t('flashes.accounts.not_exist')
+    redirect_to teams_path
   end
 end

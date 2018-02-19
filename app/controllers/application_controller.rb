@@ -84,8 +84,21 @@ class ApplicationController < ActionController::Base
   def redirect_if_not_teammember
     team_id = params[:team_id]
     return if team_id.nil?
-    team = Team.find(team_id)
+    begin
+      team = Team.find(team_id)
+    rescue
+      return no_team_message
+    end
     return if team.teammember?(current_user.id)
+    no_member_message
+  end
+
+  def no_team_message
+    flash[:error] = t('flashes.teams.not_exist')
+    redirect_to teams_path
+  end
+
+  def no_member_message
     flash[:error] = t('flashes.teams.no_member')
     redirect_to teams_path
   end

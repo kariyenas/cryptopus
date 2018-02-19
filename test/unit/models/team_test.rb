@@ -131,6 +131,18 @@ class TeamTest <  ActiveSupport::TestCase
     assert_equal 'foo foo', team.description
   end
 
+  test 'does not create team if name is too long' do
+    params = {}
+    params[:name] = 'g' * 71
+    params[:description] = 'foo foo'
+    params[:private] = false
+
+    team = Team.create(bob, params)
+
+    assert_not team.valid?
+    assert_match /Name/, team.errors.full_messages.first
+  end
+
   test 'does not create team if name is empty' do
     params = {}
     params[:name] = ''

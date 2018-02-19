@@ -247,12 +247,16 @@ de:
     accounts:
       created: Der neue Account wurde erfolgreich erstellt.
       updated: Der Account wurde erfolgreich aktualisiert.
-      moved: Der Account wurde erfolgreich veschoben
+      moved: Der Account wurde erfolgreich veschoben.
+      not_exist: Der Account existiert nicht.
+      not_valid: Der Account ist nicht gültig.
     application:
       wait: Bitte warten Sie, bis  Ihre Team Passwörter neu verschlüsselt wurden.
     groups:
       created: Die neue Gruppe wurde erfolgreich erstellt.
       updated: Die Gruppe wurde erfolgreich bearbeitet.
+      not_exist: Die Gruppe existiert nicht.
+      not_valid: Das Gruppe ist nicht gültig
     items:
       uploaded: Die Datei wurde erfolgreich hochgeladen.
       uploaded_size_to_high: Die Datei ist zu gross zum hochladen. (Max. 10MB)
@@ -278,6 +282,8 @@ de:
       deleted: Das Team wurde erfolgreich gelöscht
       cannot_delete: Nur Admins können das Team löschen
       no_member: Sie sind nicht Mitglied dieses Teams
+      not_valid: Das Team ist nicht gültig
+      not_exist: Das Team existiert nicht
     teammembers:
       could_not_remove_last_teammember: Der letzte Benutzer eines Teams kann nicht entfernt werden
       could_not_remove_admin_from_private_team: Admins können nicht aus einem privaten Team gelöscht werden

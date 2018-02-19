@@ -251,12 +251,16 @@ en:
     accounts:
       created: Account was successfully created.
       updated: Account was successfully updated.
-      moved: Account was successfully moved
+      moved: Account was successfully moved.
+      not_exist: Account does not exist.
+      not_valid: Account is not valid.
     application:
       wait: Wait for the recryption of your team passwords.
     groups:
       created: Successfully created a new group.
       updated: Group was successfully updated.
+      not_exist: Group does not exist
+      not_valid: Group is not valid
     items:
       uploaded: File was successfully uploaded.
       uploaded_size_to_high: The file is too big to upload. (max. 10MB)
@@ -283,8 +287,8 @@ en:
       deleted: Team was successfully deleted
       cannnot_delete: Only admin may delete teams
       no_member: You are not member of this team
-      cannnot_delete: Only admin may delete teams
-      no_member: You are not member of this team
+      not_valid: Team is not valid
+      not_exist: Team does not exist
     teammembers:
       could_not_remove_last_teammember: Could not remove last teammember
       could_not_remove_admin_from_private_team: Could not remove admin from private team
